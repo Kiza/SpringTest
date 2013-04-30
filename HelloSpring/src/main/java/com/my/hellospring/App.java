@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
 
     public static void main(String[] args) {
-        
+
         ApplicationContext ctx;
         ctx = new ClassPathXmlApplicationContext("spring/springapp-context.xml");
         MessageRenderer messageRenderer = ctx.getBean("messageRenderer", MessageRenderer.class);
