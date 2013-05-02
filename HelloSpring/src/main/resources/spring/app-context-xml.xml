@@ -11,6 +11,12 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.1.xsd 
 http://www.springframework.org/schema/util 
 http://www.springframework.org/schema/util/spring-util-3.1.xsd"> 
-    
-    <bean id="messageRenderer" class="com.my.hellospring.StandardOutMessageRenderer"/> 
+
+    <bean id="messageProvider" class="com.my.hellospring.HelloWorldMessageProvider"/> 
+    <bean id="messageRenderer" class="com.my.hellospring.StandardOutMessageRenderer">
+        <property name="messageProvider"> 
+            <ref bean="messageProvider"/> 
+        </property>
+    </bean> 
+
 </beans> 
